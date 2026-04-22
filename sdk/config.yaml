@@ -1,0 +1,51 @@
+# Default configuration for the Self-Learning & Self-Replication SDK
+# See /home/ubuntu/sdk_design/SDK_DESIGN_DOC.md §9 for the canonical schema.
+
+agent:
+  agent_id: "agent-root-0001"
+  generation: 0
+  parent_id: null
+  seed: 42
+
+energy:
+  initial_eu: 1000.0
+  max_cap: 5000.0
+  refill_rate: 10.0            # EU / second
+  reference_c_squared: 1.0     # hardware-normalized throughput factor
+  replication_cost_eu: 100.0
+  replication_energy_floor: 200.0
+
+state:
+  maturation_horizon_sec: 60   # short horizon for demo
+  quality_floor: 0.05
+  memory_floor: 0.05
+  trajectory_window: 1024
+
+oracle:
+  # CONV_THRESHOLD (|π·cos(√e)| normalized ≈ 0.5792) is hard-coded — NOT configurable.
+  replication_floor: 0.85
+  stochastic_gate: false
+  jitter_sigma: 0.02
+
+replication:
+  max_generations: 5
+  fleet_cap: 32
+  mutation_sigma: 0.05
+  allow_structural_mutation: false
+  mutation_allowlist:
+    - "learning_rate"
+    - "epsilon"
+    - "batch_size"
+
+governance:
+  kill_switch_enabled: true
+  audit_log_path: "./audit.log"
+  approval_mode: "on_high_risk"   # disabled | on_high_risk | always
+  human_approval_required_at_gen: 3
+  approval_timeout_sec: 5           # shortened for demo/tests
+  max_memory_mb: 2048
+  max_cpu_pct: 80
+  fleet_max_replications_per_day: 50
+
+observability:
+  log_level: "INFO"

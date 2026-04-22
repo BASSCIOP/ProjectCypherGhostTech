@@ -1,0 +1,77 @@
+
+==============================================================================
+  SLSR SDK — Enhanced Demo (E8 geometry + gyroscopic stability)
+==============================================================================
+E8 self-check: {'count_240': True, 'all_norm_sq_2': True, 'closed_under_negation': True, 'no_duplicates': True, 'weyl_reflection_closed_sample': True}
+  #roots = 240 in R^8
+
+==============================================================================
+  1) Enhanced agent: 30-cycle learning run
+==============================================================================
+  cycle 01: Q=0.011 M=0.037 T=0.050 S=0.000 | E8=0.7965 stab=0.9567 | ready_repl=False
+  cycle 02: Q=0.043 M=0.074 T=0.100 S=0.000 | E8=0.8265 stab=0.9166 | ready_repl=False
+  cycle 03: Q=0.071 M=0.111 T=0.150 S=0.001 | E8=0.8178 stab=0.8882 | ready_repl=False
+  cycle 04: Q=0.098 M=0.148 T=0.200 S=0.003 | E8=0.8427 stab=0.8686 | ready_repl=False
+  cycle 05: Q=0.141 M=0.185 T=0.250 S=0.007 | E8=0.7818 stab=0.8450 | ready_repl=False
+  cycle 06: Q=0.191 M=0.222 T=0.300 S=0.013 | E8=0.8289 stab=0.8221 | ready_repl=False
+  cycle 07: Q=0.242 M=0.259 T=0.350 S=0.022 | E8=0.8189 stab=0.8043 | ready_repl=False
+  cycle 08: Q=0.294 M=0.296 T=0.400 S=0.035 | E8=0.8511 stab=0.7905 | ready_repl=False
+  cycle 09: Q=0.342 M=0.333 T=0.450 S=0.051 | E8=0.9344 stab=0.7832 | ready_repl=False
+  cycle 10: Q=0.384 M=0.370 T=0.500 S=0.071 | E8=0.8744 stab=0.7812 | ready_repl=False
+  cycle 11: Q=0.424 M=0.407 T=0.550 S=0.095 | E8=0.8340 stab=0.7818 | ready_repl=False
+  cycle 12: Q=0.465 M=0.444 T=0.600 S=0.124 | E8=0.8490 stab=0.7813 | ready_repl=False
+  cycle 13: Q=0.504 M=0.482 T=0.650 S=0.158 | E8=0.8534 stab=0.7823 | ready_repl=False
+  cycle 14: Q=0.549 M=0.519 T=0.700 S=0.199 | E8=0.8972 stab=0.7792 | ready_repl=False
+  cycle 15: Q=0.591 M=0.556 T=0.750 S=0.246 | E8=0.8812 stab=0.7787 | ready_repl=False
+  cycle 16: Q=0.619 M=0.593 T=0.800 S=0.293 | E8=0.8411 stab=0.7876 | ready_repl=False
+  cycle 17: Q=0.654 M=0.630 T=0.850 S=0.350 | E8=0.8210 stab=0.7897 | ready_repl=False
+  cycle 18: Q=0.684 M=0.667 T=0.900 S=0.411 | E8=0.8835 stab=0.7939 | ready_repl=False
+  cycle 19: Q=0.715 M=0.704 T=0.950 S=0.478 | E8=0.8446 stab=0.7971 | ready_repl=False
+  cycle 20: Q=0.743 M=0.741 T=1.000 S=0.550 | E8=0.8144 stab=0.8007 | ready_repl=False
+  cycle 21: Q=0.769 M=0.778 T=1.000 S=0.598 | E8=0.9040 stab=0.8050 | ready_repl=False
+  cycle 22: Q=0.780 M=0.815 T=1.000 S=0.636 | E8=0.8961 stab=0.8161 | ready_repl=False
+  cycle 23: Q=0.799 M=0.852 T=1.000 S=0.681 | E8=0.9427 stab=0.8197 | ready_repl=False
+  cycle 24: Q=0.808 M=0.889 T=1.000 S=0.718 | E8=0.8449 stab=0.8269 | ready_repl=False
+  cycle 25: Q=0.824 M=0.926 T=1.000 S=0.763 | E8=0.8757 stab=0.8287 | ready_repl=False
+  cycle 26: Q=0.837 M=0.963 T=1.000 S=0.806 | E8=0.9634 stab=0.8315 | ready_repl=False
+  cycle 27: Q=0.851 M=1.000 T=1.000 S=0.851 | E8=0.9574 stab=0.8331 | ready_repl=True
+  cycle 28: Q=0.865 M=1.000 T=1.000 S=0.865 | E8=0.9884 stab=0.8340 | ready_repl=True
+  cycle 29: Q=0.868 M=1.000 T=1.000 S=0.868 | E8=0.9646 stab=0.8385 | ready_repl=True
+  cycle 30: Q=0.878 M=1.000 T=1.000 S=0.878 | E8=0.9279 stab=0.8392 | ready_repl=True
+
+==============================================================================
+  2) Baseline agent (same seed, all enhancements OFF)
+==============================================================================
+
+==============================================================================
+  3) Replication attempts — enhanced vs baseline
+==============================================================================
+  [enhanced]
+    success=True parent→child L2=5.9266  (ok)
+    success=True parent→child L2=4.5154  (ok)
+    success=True parent→child L2=2.9410  (ok)
+  [baseline]
+    success=True parent→child L2=8.0000  (ok)
+    success=True parent→child L2=6.0952  (ok)
+    success=True parent→child L2=3.9700  (ok)
+
+==============================================================================
+  4) Baseline vs Enhanced — summary table
+==============================================================================
+  metric                                       baseline  enhanced  
+  -----------------------------------------------------------------
+  (a) Q-delta variance over 30 cycles          0.000225  0.000202  
+  (b) mean parent→child L2 on successful reps  6.0217    4.4610    
+  (c) fraction of cycles 'ready_to_replicate'  0.133     0.133     
+  (d) successful replications (of 3 attempts)  3         3         
+
+==============================================================================
+  5) Final interpretive notes
+==============================================================================
+  * Variance (a): gyroscopic damping on Q/M updates suppresses single-cycle spikes, so the enhanced agent's Q-delta variance is typically strictly lower.
+  * L2 distance (b): stabilize_vector is strictly contractive (‖out‖ ≤ ‖in‖), so mutated children sit closer to parents in hyperparameter space — catastrophic jumps are damped out.
+  * Readiness rate (c): the E8 gate rejects cycles whose 8-D embedding is noisy, even when the scalar S-score has already passed. Expect enhanced < baseline early on, then they converge as Q·M grows and the embedding snaps to a lattice direction.
+
+==============================================================================
+  Demo complete.
+==============================================================================
