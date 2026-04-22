@@ -1,3 +1,29 @@
+Metadata-Version: 2.4
+Name: threat-modeling-sdk
+Version: 1.0.0
+Summary: Network Anonymity Threat Modeling SDK — Analyze anonymity protocols against adversary capabilities for security research.
+Author: Threat Modeling SDK
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Security
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
+
 # Network Anonymity Threat Modeling SDK
 
 A Python SDK for modeling adversary capabilities against network anonymity protocols. This is an **educational and defensive security research tool** for understanding the threat landscape of anonymity technologies.

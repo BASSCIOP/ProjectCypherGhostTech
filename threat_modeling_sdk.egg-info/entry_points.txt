@@ -1,0 +1,2 @@
+[console_scripts]
+threat-model = threat_modeling.cli:main
