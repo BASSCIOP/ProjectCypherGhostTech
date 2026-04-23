@@ -1,0 +1,124 @@
+{
+  "protocol": {
+    "id": "tor",
+    "name": "Tor (The Onion Router)"
+  },
+  "adversary": {
+    "id": "nation_state",
+    "name": "Nation-State"
+  },
+  "overall_risk_score": 99.6,
+  "risk_level": "Critical",
+  "confidence_interval": {
+    "low": 91.6,
+    "high": 100.0,
+    "confidence_level": "90%"
+  },
+  "technique_results": [
+    {
+      "technique_id": "traffic_volume",
+      "technique_name": "Traffic Volume Analysis",
+      "base_effectiveness": 0.35,
+      "adversary_capability": 0.9,
+      "detection_probability": 0.315,
+      "difficulty": "low"
+    },
+    {
+      "technique_id": "timing_correlation",
+      "technique_name": "Timing Correlation Analysis",
+      "base_effectiveness": 0.45,
+      "adversary_capability": 0.9,
+      "detection_probability": 0.405,
+      "difficulty": "high"
+    },
+    {
+      "technique_id": "protocol_fingerprint",
+      "technique_name": "Protocol Fingerprinting / Deep Packet Inspection",
+      "base_effectiveness": 0.5,
+      "adversary_capability": 0.95,
+      "detection_probability": 0.475,
+      "difficulty": "medium"
+    },
+    {
+      "technique_id": "entry_exit_corr",
+      "technique_name": "Entry/Exit Correlation",
+      "base_effectiveness": 0.4,
+      "adversary_capability": 0.85,
+      "detection_probability": 0.34,
+      "difficulty": "very_high"
+    },
+    {
+      "technique_id": "dns_leakage",
+      "technique_name": "DNS Leakage Detection",
+      "base_effectiveness": 0.15,
+      "adversary_capability": 0.95,
+      "detection_probability": 0.1425,
+      "difficulty": "low"
+    },
+    {
+      "technique_id": "webrtc_leakage",
+      "technique_name": "WebRTC Leakage Detection",
+      "base_effectiveness": 0.1,
+      "adversary_capability": 0.9,
+      "detection_probability": 0.09,
+      "difficulty": "low"
+    },
+    {
+      "technique_id": "ip_reputation",
+      "technique_name": "IP/ASN Reputation Analysis",
+      "base_effectiveness": 0.7,
+      "adversary_capability": 0.95,
+      "detection_probability": 0.665,
+      "difficulty": "low"
+    },
+    {
+      "technique_id": "behavioral_pattern",
+      "technique_name": "Behavioral Pattern Recognition",
+      "base_effectiveness": 0.5,
+      "adversary_capability": 0.9,
+      "detection_probability": 0.45,
+      "difficulty": "high"
+    },
+    {
+      "technique_id": "circuit_analysis",
+      "technique_name": "Circuit / Connection Analysis",
+      "base_effectiveness": 0.35,
+      "adversary_capability": 0.8,
+      "detection_probability": 0.28,
+      "difficulty": "very_high"
+    },
+    {
+      "technique_id": "metadata_analysis",
+      "technique_name": "Metadata Analysis",
+      "base_effectiveness": 0.4,
+      "adversary_capability": 0.9,
+      "detection_probability": 0.36,
+      "difficulty": "low"
+    },
+    {
+      "technique_id": "side_channel_timing",
+      "technique_name": "Side-Channel Timing Attacks",
+      "base_effectiveness": 0.25,
+      "adversary_capability": 0.75,
+      "detection_probability": 0.1875,
+      "difficulty": "very_high"
+    },
+    {
+      "technique_id": "infra_mapping",
+      "technique_name": "Infrastructure Mapping",
+      "base_effectiveness": 0.55,
+      "adversary_capability": 0.9,
+      "detection_probability": 0.495,
+      "difficulty": "high"
+    }
+  ],
+  "mitigation_recommendations": [
+    "[IP/ASN Reputation Analysis] (detection prob: 66%): Use bridge relays or unlisted entry points not present in public blocklists. Rotate VPN servers frequently. Use residential IP addresses when available.",
+    "[Infrastructure Mapping] (detection prob: 50%): Use bridge nodes or private entry points not listed in public directories. Prefer decentralized networks where infrastructure is harder to enumerate comprehensively.",
+    "[Protocol Fingerprinting / Deep Packet Inspection] (detection prob: 48%): Use pluggable transports or obfuscation layers (e.g., obfs4 for Tor) to disguise protocol fingerprints. Tunnel anonymity traffic inside common protocols (HTTPS, WebSocket).",
+    "[Behavioral Pattern Recognition] (detection prob: 45%): Vary browsing habits and session patterns. Use separate anonymity sessions for different activities. Avoid logging into personally identifiable accounts while using anonymity tools.",
+    "[Timing Correlation Analysis] (detection prob: 40%): Add random delays and jitter to traffic flows. Use protocols with built-in traffic shaping. Avoid predictable communication patterns.",
+    "[General] Against advanced adversaries: use defense-in-depth by combining multiple anonymity tools, practicing strict operational security (OPSEC), and compartmentalizing activities across separate anonymity sessions and identities."
+  ],
+  "generated_at": "2026-04-12T04:10:40.708364+00:00"
+}
